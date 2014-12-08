@@ -1,7 +1,7 @@
 import oscP5.*;
 import netP5.*;
 
-/* *
+/* * Spiderlily 07/12/2014
  * Notes and drawing are synchronised by the Draw framerate.
  * 5 SoundChiper instances are used to enable independent parts.
  * Constrained randomness maintains a balance of order and variety.
