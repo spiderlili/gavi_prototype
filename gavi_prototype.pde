@@ -1,13 +1,10 @@
-import oscP5.*;
-import netP5.*;
-
 /* *
- * GAVI Prototype by Spiderlily(Jing Chun Tan) - 12/2014
+ * GAVI Prototype by Spiderlili
+ * Based on SoundCipher library example by Andrew R. Brown
  * Notes and drawing are synchronised by the Draw framerate.
  * 5 SoundChiper instances are used to enable independent parts.
  * Constrained randomness maintains a balance of order and variety.
  * The music will continue as long as the drawing does.
- * Based on SoundCipher library example by Andrew R. Brown
  */
 //play JavaSound synth 
 import arb.soundcipher.*;
@@ -72,13 +69,13 @@ void setup() {
   rect(30, 40,500,500);
   smooth();
 
-  //sounds: 80=synth, 49=strings, 0=piano, 10=waterpiano, 30=owlcity, 40=sax, 49=strings, 100=fantasy, 105=crisp, 102=floaty, 101=ambient,
-  sc3.instrument(102); //play strings chords
-  sc2.instrument(10); //play piano notes
-  sc.instrument(102); //play synth notes
-  sc4.instrument(80);//play sharp synth
-  sc5.instrument(10);//play water piano
+  sc3.instrument(98); //play crystal bells 
+  sc2.instrument(88); //play fantasia synth
+  sc.instrument(9); //play glock 
+  sc4.instrument(123);//play birds(triangle mode) 
+  sc5.instrument(123);//play sound effects(ellipse mode) 
   
+ 
   //gesture detection  
   name = " ";
   // 1. Create instance of class OneDollar:
@@ -239,20 +236,4 @@ void drawCircles() {
 // 5. Track data:
 void mouseDragged() {
   one.track(mouseX, mouseY);
-}
-
-void mousePressed() {
-  /* in the following different ways of creating osc messages are shown by example */
-//  OscMessage myMessage = new OscMessage("/test");
-//  myMessage.add(123); /* add an int to the osc message */
-  /* send the message */
-//  oscP5.send(myMessage, myRemoteLocation); 
-}
-
-/* incoming osc message are forwarded to the oscEvent method. */
-void oscEvent(OscMessage theOscMessage) {
-  /* print the address pattern and the typetag of the received OscMessage */
-  print("### received an osc message.");
-  print(" addrpattern: "+theOscMessage.addrPattern());
-  println(" typetag: "+theOscMessage.typetag());
 }
